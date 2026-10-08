@@ -5,11 +5,9 @@ import { MapPin, Phone, Mail, Facebook, Instagram, } from "lucide-react"
 
 const brandLogos = [
   { name: "Aequipe", src: "/images/marca-aequipe.png" },
-  { name: "Kreisen", src: "/images/marca-kreisen.png" },
-  { name: "Tajiro", src: "/images/marca-tajiro.png" },
-  { name: "Oxion", src: "/images/marca-oxion.png" },
-  
-  
+  { name: "Kreisen", src: "/images/marca-kreisen.png", href: "https://kreisen.com.ar" },
+  { name: "Tajiro", src: "/images/marca-tajiro.png", href: "https://tajiro.com.ar" },
+  { name: "Oxion", src: "/images/marca-oxion.png", href: "https://balsamo.com.ar" },
 ]
 
 const socialLinks = [
@@ -141,13 +139,31 @@ export function Footer() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
                     viewport={{ once: true }}
-                    className="bg-white rounded-lg p-3 hover:shadow-lg transition-all duration-200"
+                    className="bg-white rounded-lg hover:shadow-lg transition-all duration-200"
                   >
-                    <img
-                      src={brand.src || "/placeholder.svg"}
-                      alt={brand.name}
-                      className="h-8 w-auto object-contain mx-auto"
-                    />
+                    {brand.href ? (
+                      <a
+                        href={brand.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Ir al sitio de ${brand.name}`}
+                        className="block p-3"
+                      >
+                        <img
+                          src={brand.src || "/placeholder.svg"}
+                          alt={brand.name}
+                          className="h-8 w-auto object-contain mx-auto"
+                        />
+                      </a>
+                    ) : (
+                      <div className="p-3">
+                        <img
+                          src={brand.src || "/placeholder.svg"}
+                          alt={brand.name}
+                          className="h-8 w-auto object-contain mx-auto"
+                        />
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </div>

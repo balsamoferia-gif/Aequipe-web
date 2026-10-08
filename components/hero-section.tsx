@@ -7,6 +7,14 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const slides = [
   {
+    desktopImg: "/images/aequipe_gama.jpg",
+    mobileImg: "/images/aequipe_gama.jpg",
+    alt: "Aequipe product range",
+    title: "TODO PARA TU RENAULT,\nEN UN SOLO LUGAR",
+    text:
+      "Una amplia gama de repuestos AEQUIPE para acompañar cada sistema de tu Renault, con calidad, variedad y respaldo especialista."
+  },
+  {
     desktopImg: "/images/banner-mobile.jpg",
     mobileImg: "/images/banner-mobile.jpg",
     alt: "Aequipe brake discs",
